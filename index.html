@@ -20,6 +20,40 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
+<script>
+/* ==========================================
+   AUTO CLOSE NAVBAR WHEN CLICKING OUTSIDE
+   ========================================== */
+
+document.addEventListener("click", function (event) {
+
+  const navbar = document.getElementById("ftco-nav");
+  const toggleBtn = document.querySelector(".navbar-toggler");
+
+  // screen check (only small devices)
+  if (window.innerWidth <= 991) {
+
+    const clickedInsideMenu = navbar.contains(event.target);
+    const clickedToggle = toggleBtn.contains(event.target);
+
+    // if clicked outside menu and not toggle button
+    if (!clickedInsideMenu && !clickedToggle) {
+      if (navbar.classList.contains("show")) {
+        $(".navbar-collapse").collapse("hide"); // Bootstrap close
+      }
+    }
+  }
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 991) {
+      $(".navbar-collapse").collapse("hide");
+    }
+  });
+});
+
+</script>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	
 	
@@ -27,7 +61,7 @@
 		<div class="container">
 			<a href="index.html" class="navbar-brand">Saran Adithya R S<span></span></a>
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<i class="fas fa-bars"></i> Menu
+				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
