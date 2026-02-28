@@ -61,6 +61,138 @@ body {
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
+/* ===== HERO RESPONSIVE FIX ===== */
+
+@media (max-width: 576px) {
+
+  .hero {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  .hero .slider-text {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .hero .one-third.img {
+    order: -1;
+    width: 100% !important;
+    height: 300px;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .hero .one-forth {
+    width: 100% !important;
+    padding-top: 20px;
+  }
+  @media (max-width: 991px){
+
+  #ftco-nav{
+    position:absolute;
+    right:0;
+    top:70px;
+    width:280px;
+    background:#3d3d3d;
+    padding:20px;
+    border-radius:12px 0 0 12px;
+    animation: slideRight .3s ease;
+  }
+}
+
+@keyframes slideRight{
+  from{transform:translateX(100%); opacity:0;}
+  to{transform:translateX(0); opacity:1;}
+}
+
+/* =====================================================
+   HERO IMAGE MOVE LEFT ON SMALL SCREENS
+   ===================================================== */
+
+/* Tablets & small laptops */
+@media (max-width: 992px) {
+
+  .hero .one-third.img {
+    background-position: left center !important;
+  }
+
+}
+
+
+/* Phones */
+@media (max-width: 576px) {
+
+  .hero .one-third.img {
+    background-position: left top !important;
+  }
+
+}
+  /* ===== About Section Image Fix ===== */
+/* =====================================================
+   ABOUT SECTION — FINAL RESPONSIVE IMAGE FIX
+   ===================================================== */
+
+/* Main image container */
+.img-about .img {
+  width: 100%;
+  aspect-ratio: 4 / 5;              /* keeps image visible always */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+/* Ensure parent stretches correctly */
+.img-about {
+  width: 100%;
+  height: 100%;
+}
+
+/* Prevent Bootstrap flex collapse issue */
+#about-section .row {
+  align-items: stretch;
+}
+
+/* ---------- Tablet Adjustment ---------- */
+@media (max-width: 992px) {
+
+  .img-about .img {
+    aspect-ratio: 3 / 4;
+  }
+
+}
+
+/* ---------- Mobile Layout ---------- */
+@media (max-width: 768px) {
+
+  /* Stack image top, text below */
+  #about-section .row {
+    flex-direction: column;
+  }
+
+  .img-about .img {
+    aspect-ratio: 1 / 1.1;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+
+}
+
+/* ---------- Small Phones ---------- */
+@media (max-width: 576px) {
+
+  .img-about .img {
+    aspect-ratio: 1 / 1.2;
+  }
+
+}
+
+
+
+}
+
 
 hr {
   -webkit-box-sizing: content-box;
@@ -9765,4 +9897,5 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
 
