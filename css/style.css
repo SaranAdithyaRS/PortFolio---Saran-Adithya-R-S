@@ -145,6 +145,14 @@ body {
   }
 
 }
+@media (max-width: 768px) {
+
+  #contact-section {
+    padding-left: 20px;
+    padding-right: 20px; /* optional but recommended */
+  }
+
+}
 /* Phones */
 @media (max-width: 576px) {
 
